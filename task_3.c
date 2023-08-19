@@ -13,23 +13,22 @@ typedef unsigned long long ULL;
 
 int isPrime(ULL number)
 {
-    int flag = 0;
     // 0 and 1 are not prime numbers
-    // change flag to 1 for non-prime number
+    // return 0 for non-prime number
     if (number == 0 || number == 1)
-        flag = 1;
+        return 0;
     else
     {
         for (ULL i = 2; i <= number / 2; ++i)
         {
             // if number is divisible by i, then n is not prime
-            // change flag to 1 for non-prime number
+            // return 0 for non-prime number
             if (number % i == 0)
-                flag = 1;
+                return 0;
         }
     }
-    
-    return flag;
+    // return 1 for prime number
+    return 1;
 }
 
 void largestPalindrome(ULL n, ULL* res, ULL* num1, ULL* num2)
